@@ -1,3 +1,14 @@
+h2
+{
+  text-align: center;
+}
+.container {
+  background-color: white;
+}
+body{
+  background-color: grey;
+}
+
 .FullPage{
 	width:100%;
 }
@@ -21,8 +32,8 @@ span
       display: block;
      margin-left: auto;
      margin-right: auto;
-	margin-bottom: 5px;
-	margin-top:-5px;
+	margin-bottom: 15px;
+	margin-top:5px;
 }
 .box{
 	height:150px;

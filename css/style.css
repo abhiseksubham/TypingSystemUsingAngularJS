@@ -4,7 +4,8 @@
 	display: block !important;
 }
 .progress { 
-  height: 3em;
+  height: auto;
+  background-color: aliceBlue;
   i { line-height: 3.5em; }
 }
 

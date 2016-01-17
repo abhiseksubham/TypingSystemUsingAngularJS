@@ -37,6 +37,8 @@ angular.module('typing')
 
 		self.startTest = function () {
 			self.init();
+			angular.element(".content textarea").removeAttr("disabled");
+			angular.element('.content textarea').empty();
 			self.isTestRestarted = !self.isTestRestarted;
 			self.defaultButtonText = self.isTestRestarted ? 'Reset Test' : 'Start Test';
 			if(!self.isTestRestarted ){
@@ -52,6 +54,7 @@ angular.module('typing')
 
 		self.stopTest = function () {
 			self.clearTimer();
+			angular.element(".content textarea").attr("disabled","disabled");
 			if ($scope.search.targetWords.length && $scope.search.typeWords.length) {
 				self.calcStatics();	
 			};
