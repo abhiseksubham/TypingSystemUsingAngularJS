@@ -1,8 +1,9 @@
 angular.module('typing')
-	.controller('TypingAppCtrl', ['$scope', '$timeout','$interval', 'TypingTestDataFactory', function ($scope, $timeout,interval, typingTestDataFactory) {
+	.controller('TypingAppCtrl', ['$scope', '$timeout','$interval', 'TypingTestDataFactory','$modal', 
+		function ($scope, $timeout,interval, typingTestDataFactory, modal) {
 
 		var self = this;
-		self.totalTime = 20;
+		self.totalTime = 5;
 		self.isTestRestarted = false;
 
 		var str = typingTestDataFactory.getTypingTestData();
@@ -55,9 +56,10 @@ angular.module('typing')
 		self.stopTest = function () {
 			self.clearTimer();
 			angular.element(".content textarea").attr("disabled","disabled");
-			if ($scope.search.targetWords.length && $scope.search.typeWords.length) {
+			if ($scope.search && $scope.search.targetWords && $scope.search.targetWords.length && $scope.search.typeWords.length) {
 				self.calcStatics();	
 			};
+			self.openDialogueModal();
 		}
         self.clearTimer = function () {
 			interval.cancel(self.testTimeIntervarl);
@@ -74,6 +76,23 @@ angular.module('typing')
 			self.errors = $scope.targetWords.length - typeWords.length;
 			
 
+		}
+		self.openDialogueModal = function (){
+			var modalInstance = modal.open({
+ 		keyboard: true,
+        templateUrl : 'templates/modalContent.html',
+        controller : 'ModalInstanceCtrl'
+
+        
+		});
+
+
+		modalInstance.result.then(function(){
+            //on ok button press 
+          },function(){
+            //on cancel button press
+            console.log("Modal Closed");
+          });
 		}
 		self.init();
 	}]);

@@ -1,11 +1,11 @@
-angular.module('typing').controller('ModalInstanceCtrl', ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
+angular.module('typing').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', function ($scope, $modalInstance) {
 
 	$scope.ok = function () {
-		$uibModalInstance.close();
+		$modalInstance.close();
 	};
 
 	$scope.cancel = function () {
-		$uibModalInstance.dismiss('cancel');
+		$modalInstance.dismiss('cancel');
 	};
 	
 }]);
