@@ -1,138 +1,175 @@
 <!DOCTYPE html>
-<html ng-app="typing">
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" ng-app="typing">
+<!--<![endif]-->
 
 <head>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <title>Assignment</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="clanmobi, a home for app development">
+  <meta name="author" content="3rd Wave Media">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+  <!-- github acitivity css -->
+  <link rel="stylesheet" href="assets/plugins/github-activity/dist/github-activity-0.1.1.min.css">
+  <link rel="stylesheet" href="assets/plugins/github-activity/dist/octicons/octicons.min.css">
 
- <link rel="stylesheet" type="text/css" href="css/FullPage.css">
- <!-- Jquery-->
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Theme CSS -->
+  <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
  <!-- bootstrap-->
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!--angularjs-->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
 
- <!--angularjs-->
- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
-
- <!--angularjs routing-->
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
- <!--angularjs and bootstrap ui-->
- <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.3.js"></script>
-
+  <!--angularjs routing-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <!--angularjs and bootstrap ui-->
+  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
 
 
- <!-- App CSS -->
- <link rel="stylesheet" href="css/style.css">
 
- <script type="text/javascript" src="js/moduleDef.js"></script>
- <script type="text/javascript" src="js/controller/TypingAppCtrl.js"></script>
- <script type="text/javascript" src="js/filter/highlightedFilter.js"></script>
- <script type="text/javascript" src="json/data.js"></script>
- <script type="text/javascript" src="js/factory/TypingTestDataFactory.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
- <style>
-  textarea {
-   resize: none;
-  }
-  
-  .correct {
-   background: yellow;
-  }
-  
-  .wrong {
-   background: red;
-  }
- </style>
- <title>Assignment</title>
+  <script type="text/javascript" src="js/moduleDef.js"></script>
+  <script type="text/javascript" src="js/controller/ModalInstanceCtrl.js"></script>
+  <script type="text/javascript" src="js/controller/TypingAppCtrl.js"></script>
+  <script type="text/javascript" src="js/filter/highlightedFilter.js"></script>
+  <script type="text/javascript" src="json/data.js"></script>
+  <script type="text/javascript" src="js/factory/TypingTestDataFactory.js"></script>
+
+  <style>
+    textarea {
+      resize: none;
+    }
+    
+    .correct {
+      background: yellow;
+    }
+    
+    .wrong {
+      background: red;
+    }
+  </style>
+
 </head>
 
 <body>
- <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Typing System </a>
-   </div>
-   <ul class="nav navbar-nav">
-    <li class="active"><a href="#">Test</a></li>
-   </ul>
-  </div>
- </nav>
- <div class="container sections-wrapper" ng-controller="TypingAppCtrl as ctrl">
-
-  <div class="row">
-   <div class="primary col-md-11 col-sm-12 col-xs-12">
-    <section class="section">
-     <div class="section-inner">
-
-      <div class="Border Margin page-header">
-       <h2><small>Accurately and precisely evaluate your typing speed and accuracy.</small></h2>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-     </div>
-    </section>
-   </div>
-   <div class="primary col-md-11 col-sm-12 col-xs-12">
-    <section class="section">
-     <div class="section-inner">
-      <div class="col-md-3 Border  text-primary">WPM
-       <div class="WPM text-primary" ng-model="ctrl.wpm">{{search.wpm}}</div>
-      </div>
-      <div class="col-md-3 Border  text-primary">Errors
-       <div class="Errors text-primary" ng-model="ctrl.errors">{{search.incorrectWords.length}}</div>
-      </div>
-      <div class="col-md-3 Border  text-primary">Accuracy
-       <div class="Accuracy text-primary" ng-model="ctrl.accuracy">{{ctrl.accuracy}}</div>
-      </div>
-      <div class="col-md-3 Border text-primary">TimeRemaning
-       <div class="TimeRemaning text-primary" ng-model="ctrl.remainingTime">{{ctrl.remainingTime}}</div>
-      </div>
-     </div>
-    </section>
-   </div>
-   <div class="primary col-md-11 col-sm-12 col-xs-12">
-    <section class="about section">
-     <div class="section-inner">
-      <h2 class="heading">Typing Content</h2>
-      <div class="content" ng-bind-html="targetWords| highlightedFilter:search" />
-      <!--//content-->
-     </div>
-     <!--//section-inner-->
-    </section>
-   </div>
 
-   <div class="primary col-md-11 col-sm-12 col-xs-12">
-    <section class="about section">
-     <div class="section-inner">
-
-     </div>
-   </div>
-   <!--//section-inner-->
-   </section>
-  </div>
-  <button type="button" class="btn btn-success vCenter" ng-model="ctrl.defaultButtonText" ng-click="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
-  <div class="primary col-md-11 col-sm-12 col-xs-12">
-   <section class="section">
-    <div class="section-inner">
-
-     <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:white; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
-
-     <h2 class="heading">Start Typing Here</h2>
-     <div class="content vCenter">
-      <textarea disabled class="form-control Margin" cols="120" rows="5" resize="none" ng-model="search.text"></textarea>
-     </div>
-     <!--//content-->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="index.html">Home</span></a></li>
+        </ul>
+      </div>
+      <!-- end of /.navbar-collapse -->
     </div>
-    <!--//section-inner-->
-   </section>
+    <!-- end of /.container -->
+  </nav>
 
+
+  <div class="container sections-wrapper" ng-controller="TypingAppCtrl as ctrl">
+    <div class="row">
+      <div class="primary col-md-11 col-sm-12 col-xs-12">
+        <section class="about section">
+          <div class="section-inner">
+            
+            <div class="content">
+              <div class="col-md-3 Border  text-primary" ng-model="ctrl.wpm">WPM : {{search.wpm}}
+               </div>
+              <div class="col-md-3 Border  text-primary" ng-model="ctrl.errors">Errors : {{search.incorrectWords.length}}
+              </div>
+              <div class="col-md-3 Border  text-primary" ng-model="ctrl.accuracy">Accuracy : {{ctrl.accuracy}}
+              </div>
+              <div class="col-md-3 Border text-primary" ng-model="ctrl.remainingTime">Time Remaning : {{ctrl.remainingTime}}     </div>
+            </div>
+            <!--//content-->
+          </div>
+          <!--//section-->
+        </section>
+        <!--//section-->
+      </div>
+      <!--//secondary-->
+
+      <div class="primary col-md-11 col-sm-12 col-xs-12">
+        <section class="about section">
+          <div class="section-inner">
+            <h2 class="heading">Typing Content</h2>
+            <div class="content" ng-bind-html="targetWords| highlightedFilter:search" />
+            <!--//content-->
+          </div>
+          <!--//section-->
+        </section>
+        <!--//section-->
+      </div>
+      <!--//secondary-->
+
+      <div class="primary col-md-11 col-sm-12 col-xs-12">
+        <section class="about section">
+          <div class="section-inner">
+               
+               <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:white; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
+
+               <button type="button" class="btn btn-success vCenter" ng-model="ctrl.defaultButtonText" ng-click="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
+            <!--//content-->
+          </div>
+          <!--//section-->
+        </section>
+        <!--//section-->
+      </div>
+      <!--//secondary-->
+
+      <div class="primary col-md-11 col-sm-12 col-xs-12">
+        <section class="about section">
+          <div class="section-inner">
+            <h2 class="heading">Start Typing Here</h2>
+            <textarea disabled class="form-control Margin" cols="120" rows="5" resize="none" ng-model="search.text"></textarea>
+            <!--//content-->
+          </div>
+          <!--//section-->
+        </section>
+        <!--//section-->
+      </div>
+      <!--//secondary-->
+    </div>
+    <!--//row-->
   </div>
-  <!--//secondary-->
- </div>
+  <!--//masonry-->
 
-
- <!--//row-->
- </div>
- <!--//masonry-->
+  <!-- Javascript -->
+  <script type="text/javascript" src="assets/plugins/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
+  <!-- github activity plugin -->
+  <script type="text/javascript" src="assets/plugins/github-activity/dist/mustache/mustache.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/github-activity/dist/github-activity-0.1.1.min.js"></script>
+  <!-- custom js -->
+  <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>

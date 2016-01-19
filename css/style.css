@@ -12,3 +12,15 @@
 .progress-bar { 
   transition: width 1s ease-in-out; 
 }
+
+ textarea {
+  resize: none;
+ }
+  
+ .correct {
+  background: yellow;
+ }
+  
+ .wrong {
+  background: red;
+ }

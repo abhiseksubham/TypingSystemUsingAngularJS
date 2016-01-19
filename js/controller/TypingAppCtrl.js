@@ -59,7 +59,7 @@ angular.module('typing')
 			if ($scope.search && $scope.search.targetWords && $scope.search.targetWords.length && $scope.search.typeWords.length) {
 				self.calcStatics();	
 			};
-			//self.openDialogueModal();
+		    self.openDialogueModal();
 		}
         self.clearTimer = function () {
 			interval.cancel(self.testTimeIntervarl);
@@ -75,13 +75,22 @@ angular.module('typing')
 			//Logic to calculate errors
 			self.errors = $scope.targetWords.length - typeWords.length;
 			
-
+			self.search.accuracy =self.accuracy;
+			self.search.errors = self.errors;
 		}
+
+
+
 		self.openDialogueModal = function (){
 			var modalInstance = modal.open({
  		keyboard: true,
         templateUrl : 'templates/modalContent.html',
-        controller : 'ModalInstanceCtrl'
+        controller : 'ModalInstanceCtrl',
+        resolve : {search :function(){
+        	return $scope.search;
+        }}
+
+
 
         
 		});

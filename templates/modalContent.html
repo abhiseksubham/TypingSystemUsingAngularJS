@@ -17,18 +17,14 @@
        <div class="Errors text-primary" ng-model ="ctrl.errors">{{search.incorrectWords.length}}</div>
       </div>
       <div class="col-md-3 Border  text-primary">Accuracy
-       <div class="Accuracy text-primary" ng-model = "ctrl.accuracy">{{ctrl.accuracy}}</div>
+       <div class="Accuracy text-primary" ng-model = "ctrl.accuracy">{{search.accuracy}}</div>
       </div>
-      <div class="col-md-3 Border text-primary">TimeRemaning
-       <div class="TimeRemaning text-primary" ng-model = "ctrl.remainingTime">{{ctrl.remainingTime}}</div>
-      </div>
-     </div>
     </section>
    </div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" ng-click = "cancel();">Close</button>
+				<button type="button" class="btn btn-primary"  ng-click = "cancel();" >Save changes</button>
 			</div>
 		</div>
 		<!-- /.modal-content -->

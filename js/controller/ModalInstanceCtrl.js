@@ -1,4 +1,7 @@
-angular.module('typing').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', function ($scope, $modalInstance) {
+angular.module('typing').controller('ModalInstanceCtrl', ['$scope', '$modalInstance','search', function ($scope, $modalInstance,search) {
+
+	$scope.search = search;
+	
 
 	$scope.ok = function () {
 		$modalInstance.close();
