@@ -59,7 +59,7 @@ angular.module('typing')
 			if ($scope.search && $scope.search.targetWords && $scope.search.targetWords.length && $scope.search.typeWords.length) {
 				self.calcStatics();	
 			};
-			self.openDialogueModal();
+			//self.openDialogueModal();
 		}
         self.clearTimer = function () {
 			interval.cancel(self.testTimeIntervarl);
