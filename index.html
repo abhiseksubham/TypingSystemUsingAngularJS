@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html ng-app ="typing">
-<head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<html ng-app="typing">
 
-<link rel="stylesheet" type="text/css" href="css/FullPage.css">
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+ <link rel="stylesheet" type="text/css" href="css/FullPage.css">
  <!-- Jquery-->
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -15,24 +16,20 @@
  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
 
  <!--angularjs routing-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
  <!--angularjs and bootstrap ui-->
- 
- <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+ <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.3.js"></script>
 
- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
- 
+
 
  <!-- App CSS -->
  <link rel="stylesheet" href="css/style.css">
 
-<script type="text/javascript" src="js/moduleDef.js"></script>
-
-<script type="text/javascript" src="js/controller/TypingAppCtrl.js"></script>
-<script type="text/javascript" src="js/filter/highlightedFilter.js"></script>
-<script type="text/javascript" src="json/data.js"></script>
-<script type="text/javascript" src="js/factory/TypingTestDataFactory.js"></script>
-
+ <script type="text/javascript" src="js/moduleDef.js"></script>
+ <script type="text/javascript" src="js/controller/TypingAppCtrl.js"></script>
+ <script type="text/javascript" src="js/filter/highlightedFilter.js"></script>
+ <script type="text/javascript" src="json/data.js"></script>
+ <script type="text/javascript" src="js/factory/TypingTestDataFactory.js"></script>
 
  <style>
   textarea {
@@ -47,8 +44,9 @@
    background: red;
   }
  </style>
-<title>Assignment</title>
+ <title>Assignment</title>
 </head>
+
 <body>
  <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -61,24 +59,32 @@
   </div>
  </nav>
  <div class="container sections-wrapper" ng-controller="TypingAppCtrl as ctrl">
- <div class="Border Margin page-header">
-  <h2><small>Accurately and precisely evaluate your typing speed and accuracy.</small></h2>
-</div>
+
   <div class="row">
    <div class="primary col-md-11 col-sm-12 col-xs-12">
     <section class="section">
      <div class="section-inner">
+
+      <div class="Border Margin page-header">
+       <h2><small>Accurately and precisely evaluate your typing speed and accuracy.</small></h2>
+      </div>
+     </div>
+    </section>
+   </div>
+   <div class="primary col-md-11 col-sm-12 col-xs-12">
+    <section class="section">
+     <div class="section-inner">
       <div class="col-md-3 Border  text-primary">WPM
-       <div class="WPM text-primary" ng-model ="ctrl.wpm">{{search.wpm}}</div>
+       <div class="WPM text-primary" ng-model="ctrl.wpm">{{search.wpm}}</div>
       </div>
       <div class="col-md-3 Border  text-primary">Errors
-       <div class="Errors text-primary" ng-model ="ctrl.errors">{{search.incorrectWords.length}}</div>
+       <div class="Errors text-primary" ng-model="ctrl.errors">{{search.incorrectWords.length}}</div>
       </div>
       <div class="col-md-3 Border  text-primary">Accuracy
-       <div class="Accuracy text-primary" ng-model = "ctrl.accuracy">{{ctrl.accuracy}}</div>
+       <div class="Accuracy text-primary" ng-model="ctrl.accuracy">{{ctrl.accuracy}}</div>
       </div>
       <div class="col-md-3 Border text-primary">TimeRemaning
-       <div class="TimeRemaning text-primary" ng-model = "ctrl.remainingTime">{{ctrl.remainingTime}}</div>
+       <div class="TimeRemaning text-primary" ng-model="ctrl.remainingTime">{{ctrl.remainingTime}}</div>
       </div>
      </div>
     </section>
@@ -97,35 +103,36 @@
    <div class="primary col-md-11 col-sm-12 col-xs-12">
     <section class="about section">
      <div class="section-inner">
-           
-      </div>
+
      </div>
-     <!--//section-inner-->
-    </section>
    </div>
-<button type="button" class="btn btn-success vCenter" ng-model = "ctrl.defaultButtonText" ng-click ="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
-   <div class="primary col-md-11 col-sm-12 col-xs-12">
-    <section class="about section">
-     <div class="section-inner">
-
-      <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:white; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
-
-      <h2 class="heading">Start Typing Here</h2>
-      <div class="content vCenter">
-       <textarea disabled class="form-control Margin" cols="120" rows="5" resize="none" ng-model="search.text"></textarea>
-      </div>
-      <!--//content-->
-     </div>
-     <!--//section-inner-->
-    </section>
-
-   </div>
-   <!--//secondary-->
+   <!--//section-inner-->
+   </section>
   </div>
-  <!--//row-->
+  <button type="button" class="btn btn-success vCenter" ng-model="ctrl.defaultButtonText" ng-click="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
+  <div class="primary col-md-11 col-sm-12 col-xs-12">
+   <section class="section">
+    <div class="section-inner">
+
+     <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:white; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
+
+     <h2 class="heading">Start Typing Here</h2>
+     <div class="content vCenter">
+      <textarea disabled class="form-control Margin" cols="120" rows="5" resize="none" ng-model="search.text"></textarea>
+     </div>
+     <!--//content-->
+    </div>
+    <!--//section-inner-->
+   </section>
+
+  </div>
+  <!--//secondary-->
+ </div>
+
+
+ <!--//row-->
  </div>
  <!--//masonry-->
-
-</div>
 </body>
+
 </html>
