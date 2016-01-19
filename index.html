@@ -117,10 +117,10 @@
       <div class="primary col-md-11 col-sm-12 col-xs-12">
         <section class="about section">
           <div class="section-inner vertical-center">
-               
-               <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:white; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
-
+               <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
+              <div>
                <button type="button" class="btn btn-success vertical-center" ng-model="ctrl.defaultButtonText" ng-click="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
+               </div>
             <!--//content-->
           </div>
           <!--//section-->
@@ -145,17 +145,8 @@
     <!--//row-->
   </div>
   <!--//masonry-->
-
   <!-- Javascript -->
-  <script type="text/javascript" src="assets/plugins/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
-  <!-- github activity plugin -->
-  <script type="text/javascript" src="assets/plugins/github-activity/dist/mustache/mustache.min.js"></script>
-  <script type="text/javascript" src="assets/plugins/github-activity/dist/github-activity-0.1.1.min.js"></script>
-  <!-- custom js -->
-  <script type="text/javascript" src="assets/js/main.js"></script>
+ 
 </body>
 
 </html>
