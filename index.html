@@ -47,23 +47,10 @@
   <script type="text/javascript" src="js/moduleDef.js"></script>
   <script type="text/javascript" src="js/controller/ModalInstanceCtrl.js"></script>
   <script type="text/javascript" src="js/controller/TypingAppCtrl.js"></script>
+  <script type="text/javascript" src="js/ProgressBar.js"></script>
   <script type="text/javascript" src="js/filter/highlightedFilter.js"></script>
   <script type="text/javascript" src="json/data.js"></script>
   <script type="text/javascript" src="js/factory/TypingTestDataFactory.js"></script>
-
-  <style>
-    textarea {
-      resize: none;
-    }
-    
-    .correct {
-      background: yellow;
-    }
-    
-    .wrong {
-      background: red;
-    }
-  </style>
 
 </head>
 
@@ -83,7 +70,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="index.html">Home</span></a></li>
+          <li class="active"><a href="index.html">Typing test</span></a></li>
         </ul>
       </div>
       <!-- end of /.navbar-collapse -->
@@ -96,8 +83,7 @@
     <div class="row">
       <div class="primary col-md-11 col-sm-12 col-xs-12">
         <section class="about section">
-          <div class="section-inner">
-            
+          <div class="section-inner hide-overflow">
             <div class="content">
               <div class="col-md-3 Border  text-primary" ng-model="ctrl.wpm">WPM : {{search.wpm}}
                </div>
@@ -130,11 +116,11 @@
 
       <div class="primary col-md-11 col-sm-12 col-xs-12">
         <section class="about section">
-          <div class="section-inner">
+          <div class="section-inner vertical-center">
                
                <uib-progressbar max="ctrl.totalTime" value="ctrl.progressValue"><span style="color:white; white-space:nowrap;">{{ctrl.progressValue}} / {{ctrl.totalTime}}</span></uib-progressbar>
 
-               <button type="button" class="btn btn-success vCenter" ng-model="ctrl.defaultButtonText" ng-click="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
+               <button type="button" class="btn btn-success vertical-center" ng-model="ctrl.defaultButtonText" ng-click="ctrl.startTest();">{{ctrl.defaultButtonText}}</button>
             <!--//content-->
           </div>
           <!--//section-->
@@ -147,7 +133,7 @@
         <section class="about section">
           <div class="section-inner">
             <h2 class="heading">Start Typing Here</h2>
-            <textarea disabled class="form-control Margin" cols="120" rows="5" resize="none" ng-model="search.text"></textarea>
+            <textarea id ="typingGround" disabled class="form-control Margin" cols="120" rows="5" resize="none" ng-model="search.text"></textarea>
             <!--//content-->
           </div>
           <!--//section-->

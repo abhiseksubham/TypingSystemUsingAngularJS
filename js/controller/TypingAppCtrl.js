@@ -38,8 +38,8 @@ angular.module('typing')
 
 		self.startTest = function () {
 			self.init();
-			angular.element(".content textarea").removeAttr("disabled");
-			angular.element('.content textarea').empty();
+			angular.element('#typingGround').removeAttr("disabled");
+			angular.element('#typingGround').val('');
 			self.isTestRestarted = !self.isTestRestarted;
 			self.defaultButtonText = self.isTestRestarted ? 'Reset Test' : 'Start Test';
 			if(!self.isTestRestarted ){
@@ -55,11 +55,14 @@ angular.module('typing')
 
 		self.stopTest = function () {
 			self.clearTimer();
-			angular.element(".content textarea").attr("disabled","disabled");
+			angular.element("#typingGround").attr("disabled","disabled");
 			if ($scope.search && $scope.search.targetWords && $scope.search.targetWords.length && $scope.search.typeWords.length) {
 				self.calcStatics();	
 			};
-		    self.openDialogueModal();
+			if(self.isTestRestarted ){
+				self.openDialogueModal();
+			}
+		    
 		}
         self.clearTimer = function () {
 			interval.cancel(self.testTimeIntervarl);
@@ -89,10 +92,6 @@ angular.module('typing')
         resolve : {search :function(){
         	return $scope.search;
         }}
-
-
-
-        
 		});
 
 
